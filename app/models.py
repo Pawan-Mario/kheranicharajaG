@@ -1,6 +1,4 @@
 from django.db import models
-from ckeditor.fields import RichTextField
-from ckeditor_uploader.fields import RichTextUploadingField
 from django.contrib.auth.models import AbstractUser
 
 
@@ -35,7 +33,7 @@ class Post(models.Model):
 
     feured_image = models.ImageField(upload_to='Images')
     title = models.CharField(max_length=200)
-    content = RichTextField()
+    content = models.TextField()
     status = models.CharField(choices=STATUS,max_length=100)
     section = models.CharField(choices=SECTION,max_length=200)
 
@@ -59,7 +57,7 @@ class Show(models.Model):
 class Aboutus(models.Model):
     feured_image = models.ImageField(upload_to='Images')
     title = models.CharField(max_length=200)
-    content = RichTextField()
+    content = models.TextField()
     def __str__(self):
         return self.title
    
@@ -67,7 +65,7 @@ class Aboutus(models.Model):
 class Leadership(models.Model):
     feured_image = models.ImageField(upload_to='Images')
     title = models.CharField(max_length=200)
-    content = RichTextField()
+    content = models.TextField()
     def __str__(self):
         return self.title
 
@@ -81,7 +79,7 @@ class Gallery(models.Model):
 class Events(models.Model):
     feured_image = models.ImageField(upload_to='Images')
     title = models.CharField(max_length=200)
-    content = RichTextField()
+    content = models.TextField()
     def __str__(self):
         return self.title
     
